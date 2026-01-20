@@ -1,0 +1,22 @@
+{
+    "name": "Page Element Modifier",
+    "description": "Used to remove any element from any page, typically ads.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "info.html",
+        "default_icon": "thumbnail.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["jquery-1.7.1.js", "jquery.key.js", "listener.js"]
+        }
+      ],
+      "background": {
+        "service_worker": "service-worker.js",
+        "type": "module"
+      },
+    "permissions": ["tabs","activeTab","scripting","contextMenus"]
+}
+  

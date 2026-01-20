@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <p>Hold ctrl + y to begin clicking and removing!</p>
+    <script src='jquery.js'></script>
+    <script src='jquery.key.js'></script>
+    <script src="listener.js">
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/serviceworker.js");
+      }</script>
+  </body>
+</html>
