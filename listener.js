@@ -3,6 +3,7 @@
 const keysObject = {}
 
 // Attempt with most up to date raw JQuery!
+// TODO Work on it not working with IFrames!
 document.addEventListener("click", (event) => {
     console.log("Clicked!");
     console.log("Object: ", keysObject[89], keysObject[17]);
