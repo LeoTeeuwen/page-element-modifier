@@ -2,26 +2,34 @@
 // An Object as this side steps needing several booleans when a single Object suffices
 const keysObject = {}
 
-document.addEventListener('click', (event) => {
-    // Access the clicked element:
-    const clickedElement = event.target;
-    console.log("Clicked Element: ", clickedElement);
+// document.addEventListener('click', (event) => {
+//     // Access the clicked element:
+//     const clickedElement = event.target;
+//     console.log("Clicked Element: ", clickedElement);
 
-    // Manual recreation of JQuery hotkeys
-    if(keysObject[89] && keysObject[17]) {
-        clickedElement.style.display = 'none';
-    }
+//     // Manual recreation of JQuery hotkeys
+//     if(keysObject[89] && keysObject[17]) {
+//         clickedElement.style.display = 'none';
+//     }
 
-});
-
+// });
 // Attempt with most up to date raw JQuery!
-$(document).on("click", (event) => {
-    if(keysObject[89] && keysObject[17]) {
+document.addEventListener("click", (event) => {
+    console.log("Clicked in the second!");
+    if (keysObject[89] && keysObject[17]) {
         console.log("Remove Element");
+        // event.target.style.display = 'none';
+        event.target.style.display = 'none';
+        event.target.remove();
         event.stopPropagation();
+        event.stopImmediatePropagation();
         event.preventDefault(); // Stop link from navigating!
     }
-});
+}, true);
+
+
+// $(css_selector)[0].click();
+
 
 $(document).on("keydown", (event) => {
     // console.log(event.which);
