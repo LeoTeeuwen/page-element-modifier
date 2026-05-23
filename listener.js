@@ -17,12 +17,12 @@ document.addEventListener("click", (event) => {
 }, true);
 
 
-document.on("keydown", (event) => {
+$(document).on("keydown", (event) => {
     // console.log(event.which);
     keysObject[`${event.which}`] = true;
 });
 
-document.on("keyup", (event) => {
+$(document).on("keyup", (event) => {
     // console.log(event.which);
     keysObject[`${event.which}`] = false;
 });
