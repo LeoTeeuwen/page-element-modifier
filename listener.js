@@ -17,13 +17,22 @@ document.addEventListener("click", (event) => {
     }
 }, true);
 
-
 $(document).on("keydown", (event) => {
-    // console.log(event.which);
     keysObject[`${event.which}`] = true;
+
+    chrome.runtime.sendMessage({
+        type: 'KEY_PRESSED',
+        key: event.key,
+        code: event.code
+    });
 });
 
 $(document).on("keyup", (event) => {
-    // console.log(event.which);
     keysObject[`${event.which}`] = false;
+
+    chrome.runtime.sendMessage({
+        type: 'KEY_RELEASED',
+        key: event.key,
+        code: event.code
+    });
 });

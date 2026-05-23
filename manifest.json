@@ -14,7 +14,7 @@
         }
       ],
       "background": {
-        "service_worker": "service-worker.js",
+        "service_worker": "background.js",
         "type": "module"
       },
     "permissions": ["tabs","activeTab","scripting","contextMenus"]
