@@ -1,12 +1,21 @@
 <html>
   <body>
-    <p>Hold ctrl + y to begin clicking and removing!</p>
     <script src='jquery.js'></script>
     <script src='jquery.key.js'></script>
     <script src="listener.js">
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register("/background.js");
       }
-      </script>
+    </script>
+
+    <div class="container" style="width: 600px; height: 500px; overflow: auto;">
+      <p>Do you hate when your Ad-Blocker REFUSES to block some stupid ad?</p>
+      <p>Now you can do it yourself!</p>
+      <div style="flex-direction: column; flex: auto">
+        <p>To get started, use </p>
+        <p>CTRL + Y </p>
+        <p>to begin blocking things!</p>
+      </div>
+    </div>
   </body>
 </html>
