@@ -19,20 +19,24 @@ document.addEventListener("click", (event) => {
 
 $(document).on("keydown", (event) => {
     keysObject[`${event.which}`] = true;
-
-    chrome.runtime.sendMessage({
-        type: 'KEY_PRESSED',
-        key: event.key,
-        code: event.code
-    });
+    
+    if (event.key === 'y' || event.key === 'Control') {
+        chrome.runtime.sendMessage({
+            type: 'KEY_PRESSED',
+            key: event.key,
+            code: event.code
+        });
+    }
 });
 
 $(document).on("keyup", (event) => {
     keysObject[`${event.which}`] = false;
-
-    chrome.runtime.sendMessage({
-        type: 'KEY_RELEASED',
-        key: event.key,
-        code: event.code
-    });
+    
+    if (event.key === 'y' || event.key === 'Control') {
+        chrome.runtime.sendMessage({
+            type: 'KEY_RELEASED',
+            key: event.key,
+            code: event.code
+        });
+    }
 });
